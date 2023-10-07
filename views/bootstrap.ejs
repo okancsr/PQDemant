@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQ Demant
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+        .form-control {
+            width: 60%;
+        }
+
+        .ana {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background-color: #f2f2f2;
+        }
+
+        .tasıyıcı {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            height: 100vh;
+
+
+
+
+        }
+
+        .white {
+            height: 150px;
+            width: 200px;
+            background-color: #b8d5d154;
+            border-radius: 5%;
+            margin: 16px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="./lightning-fill.svg" alt="" height="22px"> PQ Demant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Reaktif Değerler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Demant Değerleri</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Trafo Merkezleri
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Kayseri-1">Kayseri-1 GIS TM</a></li>
+                            <li><a class="dropdown-item" href="/Kayseri-2">Kayseri-2 TM</a></li>
+                            <li><a class="dropdown-item" href="/Kayseri-3">Kayseri-3 TM</a></li>
+                            <li><a class="dropdown-item" href="/Talas">Talas TM</a></li>
+                            <li><a class="dropdown-item" href="/Erkilet">Erkilet TM</a></li>
+                            <li><a class="dropdown-item" href="/Kapasitor">Kapasitör TM</a></li>
+                            <li><a class="dropdown-item" href="/Cinkur">Çinkur TM</a></li>
+                            <li><a class="dropdown-item" href="/Kalaba">Kalaba TM</a></li>
+                            <li><a class="dropdown-item" href="/Sendiremeke">Sendiremeke TM</a></li>
+                            <li><a class="dropdown-item" href="/Taksan">Taksan TM</a></li>
+                            <li><a class="dropdown-item" href="/Yesilhisar">Yeşilhisar TM</a></li>
+                            <li><a class="dropdown-item" href="/Pinarbasi">Pınarbaşı TM</a></li>
+                            <li><a class="dropdown-item" href="/Sizir">Sızır TM</a></li>
+                            <li><a class="dropdown-item" href="/Camlica">Çamlıca TM</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/Komp">Kompanzasyon Ünite <br> Durumları</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form action="/search" method="POST" class="d-flex" role="search">
+                    <input class="form-control me-2" type="text" name="query" placeholder="  TM Adı"
+                        aria-label="Search">
+                    <button type="submit" class="btn btn-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z">
+                            </path>
+                        </svg>
+                        Check
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="ana">
+        <div class="tasıyıcı">
+            <div class="white">
+                <p>Search Results for "<%= query %>"</p>
+                <ul>
+                    <% results.forEach(result=> { %>
+                        <li>
+                            <%= result %>
+                        </li>
+                        <% }); %>
+                </ul>
+            </div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
